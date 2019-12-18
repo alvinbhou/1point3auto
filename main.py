@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 import configparser
-import
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
