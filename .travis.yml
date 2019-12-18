@@ -12,7 +12,7 @@ before_install:
 install: 
   - pip install -r requirements.txt
   # Install Chrome
-  - sudo apt-get install chromium-browser
+  - sudo apt-get install chromium-browser=79.0.3945.79-0ubuntu0.16.04.1
   # Install ChromeDriver
   - wget -N https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip -P ~/
   - unzip ~/chromedriver_linux64.zip -d ~/

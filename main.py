@@ -3,10 +3,16 @@ from selenium.webdriver.common.keys import Keys
 import time
 import configparser
 
+chrome_options = Options()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-dev-shm-usage')
+
 
 config = configparser.ConfigParser()
 config.read('.config')
-driver = webdriver.Chrome()
+driver = webdriver.Chrome('/usr/bin/google-chrome',
+                          chrome_options=chrome_options)
 
 # Access Site
 try:
