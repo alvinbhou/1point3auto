@@ -1,6 +1,6 @@
 {
-    "name": "Auto login 1point3acres and get daily rewards",
-    "description": "Deploy a headless Chrome app on Heroku to get daily rewards on 1point3acres",
+    "name": "1point3auto",
+    "description": "Deploy a headless Chrome app to get daily rewards on 1point3acres",
     "repository": "https://github.com/CryoliteZ/1point3auto",
     "logo": "https://i.imgur.com/iXnGKRa.png",
     "keywords": ["Chrome", "Heroku", "Headless", "Selenium", "1point3acres"],
