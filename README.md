@@ -1,7 +1,7 @@
 # 1point3auto
 
 ## Summary
-An automated script to get daily rewards from 1point3auto (一畝三分地). Thanks for Heroku, all the deployment is done in one click (almost). 
+An automated script to get daily rewards from 1point3auto (一畝三分地). Thanks to Heroku, all the deployment is done in one click (almost). 
 
 ## Deployment
 
@@ -13,17 +13,27 @@ An automated script to get daily rewards from 1point3auto (一畝三分地). Tha
 
 Update the `USERNAME` and `PASSWORD` values with your 1point3acres username and password. 
 
+<img src="https://i.imgur.com/jV8a7fQ.png" width="600px">
+
+
+
 3. Deploy and Build
 
-Hit **Deploy App** and wait until the build is finished. Click `Manage App` to the main page.
+Hit **Deploy App** and wait until the build is finished. Click `Manage App` redirects to the main page.
+
+<img src="https://i.imgur.com/UnHlu8Q.png" width="600px">
 
 4. Setup Schedules
 
 * Click `Resources` > `Heroku Scheduler` > `Create Job`
 * Choose `Every day at ...` with anytime you like
-* Copy and paster`python main.py` in the command input below
+* Copy and paste `python main.py` in the command input below
+* Save job
 
-5. All done!
+<img src="https://i.imgur.com/hj6adwI.png">
+
+
+5. All set!
 
 
 ## Credit
