@@ -5,14 +5,6 @@
     "logo": "https://i.imgur.com/iXnGKRa.png",
     "keywords": ["Chrome", "Heroku", "Headless", "Selenium", "1point3acres"],
     "env": {
-        "USERNAME": {
-            "description": "1point3acres username, update the value with your username",
-            "value": "MY_USERNAME"
-        },
-        "PASSWORD": {
-            "description": "1point3acres password, update the value with your password",
-            "value": "MY_PASSWORD"
-        },
         "CHROMEDRIVER_PATH": {
             "description": "Chrome driver path",
             "value": "/app/.chromedriver/bin/chromedriver"
@@ -20,6 +12,14 @@
         "GOOGLE_CHROME_BIN": {
             "description": "Chrome path",
             "value": "/app/.apt/usr/bin/google-chrome"
+        },
+        "PASSWORD": {
+            "description": "1point3acres password, update the value with your password",
+            "value": "MY_PASSWORD"
+        },
+        "USERNAME": {
+            "description": "1point3acres username, update the value with your username",
+            "value": "MY_USERNAME"
         }
     },
     "buildpacks": [{
