@@ -13,6 +13,12 @@ driver = webdriver.Chrome(executable_path=os.environ.get(
 # Test usage of selenium
 SLEEP_TIME = 2
 
+# Access Site
+try:
+    driver.get('http://www.1point3acres.com/bbs/')
+except:
+    print('Could not access http://www.1point3acres.com/bbs/')
+
 # Login
 try:
     driver.find_element_by_id("ls_username").send_keys(
