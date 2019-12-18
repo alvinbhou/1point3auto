@@ -1,53 +1,48 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+import os
 import time
-import configparser
 
 chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
-chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+driver = webdriver.Chrome(executable_path=os.environ.get(
+    "CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
-config = configparser.ConfigParser()
-config.read('.config')
-driver = webdriver.Chrome(chrome_options=chrome_options)
-
-# Access Site
-try:
-    driver.get('http://www.1point3acres.com/bbs/')
-except:
-    print('Could not access http://www.1point3acres.com/bbs/')
+# Test usage of selenium
+SLEEP_TIME = 2
 
 # Login
 try:
     driver.find_element_by_id("ls_username").send_keys(
-        config['DEFAULT']['USERNAME'])
+        os.environ.get("USERNAME"))
     driver.find_element_by_id("ls_password").send_keys(
-        config['DEFAULT']['PASSWORD'])
-    time.sleep(config['DEFAULT']['SLEEPTIME'])
+        os.environ.get("PASSWORD"))
+    time.sleep(SLEEP_TIME)
     driver.find_element_by_css_selector("button.pn.vm").click()
-    time.sleep(config['DEFAULT']['SLEEPTIME'])
+    time.sleep(SLEEP_TIME)
 except:
     print('Couldn\'t login')
 
 # Click Daily Reward
 try:
     driver.find_element_by_xpath("//div[@id='um']/p[2]/a[3]/font").click()
-    time.sleep(config['DEFAULT']['SLEEPTIME'])
+    time.sleep(SLEEP_TIME)
 except:
     print('Couldn\'t access daily reward')
 
 # Choose Sentiment
 try:
     driver.find_element_by_css_selector("#fd > center > img").click()
-    time.sleep(config['DEFAULT']['SLEEPTIME'])
+    time.sleep(SLEEP_TIME)
 except:
     print('Sentiment not found')
 
 # Autofill review
 try:
     driver.find_element_by_xpath("(//input[@name='qdmode'])[2]").click()
-    time.sleep(config['DEFAULT']['SLEEPTIME'])
+    time.sleep(SLEEP_TIME)
 except:
     print('Autofill review fail')
 
