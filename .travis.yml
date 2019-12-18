@@ -1,0 +1,23 @@
+language: python
+cache: pip
+python:
+  - "3.6"
+
+addons: # get google-chrome-stable
+  chrome: stable
+
+before_install:
+  - cp .config.example .config
+
+install: 
+  - pip install -r requirements.txt
+  # Install ChromeDriver
+  - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
+  - unzip ~/chromedriver_linux64.zip -d ~/
+  - rm ~/chromedriver_linux64.zip
+  - sudo mv -f ~/chromedriver /usr/local/share/
+  - sudo chmod +x /usr/local/share/chromedriver
+  - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+
+script:
+  - python main.py 

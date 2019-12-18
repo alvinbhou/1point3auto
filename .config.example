@@ -1,0 +1,4 @@
+[DEFAULT]
+USERNAME = user@mail.com
+PASSWORD = password
+SLEEPTIME = 2
