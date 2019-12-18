@@ -3,14 +3,18 @@ cache: pip
 python:
   - "3.6"
 
-addons: # get google-chrome-stable
-  chrome: stable
+# addons: # get google-chrome-stable
+#   chrome: stable
 
 before_install:
   - cp .config.example .config
 
 install: 
   - pip install -r requirements.txt
+  - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  - sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+  - sudo apt-get update
+  - sudo apt-get install google-chrome-stable
   # Install ChromeDriver
   - wget -N http://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -P ~/
   - unzip ~/chromedriver_linux64.zip -d ~/
