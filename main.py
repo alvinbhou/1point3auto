@@ -10,8 +10,7 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 
 config = configparser.ConfigParser()
 config.read('.config')
-driver = webdriver.Chrome('/usr/bin/google-chrome',
-                          chrome_options=chrome_options)
+driver = webdriver.Chrome(chrome_options=chrome_options)
 
 # Access Site
 try:

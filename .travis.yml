@@ -23,4 +23,4 @@ install:
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 
 script:
-  - python main.py 
+  - sudo python main.py 
