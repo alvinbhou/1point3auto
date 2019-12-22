@@ -1,7 +1,7 @@
 # 1point3auto
 
 ## Summary
-An automated script to get daily rewards from 1point3auto (一畝三分地). Thanks to Heroku, all the deployment is done in one click (almost). 
+An automated script to get daily rewards from 1point3auto (一畝三分地). Thanks to Heroku, the deployment is stress-free and easy. All the deployment is done in one click (almost). 
 
 ## Deployment
 

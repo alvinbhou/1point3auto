@@ -11,13 +11,15 @@ driver = webdriver.Chrome(executable_path=os.environ.get(
     "CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
 # Test usage of selenium
-SLEEP_TIME = 2
+SLEEP_TIME = 4
 
 # Access Site
 try:
     driver.get('http://www.1point3acres.com/bbs/')
+    print('Successful Access Site')
 except:
     print('Could not access http://www.1point3acres.com/bbs/')
+    exit(1001)
 
 # Login
 try:
@@ -27,36 +29,48 @@ try:
         os.environ.get("PASSWORD"))
     time.sleep(SLEEP_TIME)
     driver.find_element_by_css_selector("button.pn.vm").click()
+    print('Successful Login')
     time.sleep(SLEEP_TIME)
 except:
     print('Couldn\'t login')
+    exit(1002)
 
 # Click Daily Reward
 try:
     driver.find_element_by_xpath("//div[@id='um']/p[2]/a[3]/font").click()
     time.sleep(SLEEP_TIME)
+    print('Successful click Daily Reward')
 except:
     print('Couldn\'t access daily reward')
+    exit(1003)
+
 
 # Choose Sentiment
 try:
     driver.find_element_by_css_selector("#fd > center > img").click()
     time.sleep(SLEEP_TIME)
+    print('Successful Choose Sentiment')
 except:
     print('Sentiment not found')
+    exit(1004)
 
-# Autofill review
+# Autofill Review
 try:
     driver.find_element_by_xpath("(//input[@name='qdmode'])[2]").click()
+    print('Successful Autofill review')
     time.sleep(SLEEP_TIME)
 except:
     print('Autofill review fail')
+    exit(1005)
 
 # Submit daily request
 try:
     driver.find_element_by_css_selector("button.pn.pnc").click()
+    print('Successful Submit daily request')
 except:
     print('Submit daily request fail')
+    exit(1006)
 
 # Quit
 driver.quit()
+exit(0)
