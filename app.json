@@ -14,12 +14,11 @@
             "value": "/app/.apt/usr/bin/google-chrome"
         },
         "PASSWORD": {
-            "description": "1point3acres password, update the value with your password",
+            "description": "1point3acres password, update the value with your password"
 
         },
         "USERNAME": {
-            "description": "1point3acres username, update the value with your username",
-
+            "description": "1point3acres username, update the value with your username"
         }
     },
     "buildpacks": [{
