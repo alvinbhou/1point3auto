@@ -17,7 +17,7 @@ SLEEP_TIME = 4
 try:
     driver.get('http://www.1point3acres.com/bbs/')
     print('Successful Access Site')
-except:
+except BaseException:
     print('Could not access http://www.1point3acres.com/bbs/')
     exit(1001)
 
@@ -31,30 +31,26 @@ try:
     driver.find_element_by_css_selector("button.pn.vm").click()
     print('Successful Login')
     time.sleep(SLEEP_TIME)
-except:
+except BaseException:
     print('Couldn\'t login')
     exit(1002)
 
 # Click Daily Reward
 try:
-    driver.find_element_by_xpath("//div[@id='um']/p[2]/a[3]/font").click()
+    driver.find_element_by_xpath("//font[text()='签到领奖!']").click()
     time.sleep(SLEEP_TIME)
     print('Successful click Daily Reward')
-except:
-    try:
-        driver.find_element_by_xpath("//div[@id='um']/p[2]/a[2]/font").click()
-        time.sleep(SLEEP_TIME)
-        print('Successful click Daily Reward after retry')
-    except:
-        print('Couldn\'t access daily reward')
-        exit(1003)
+except Exception as e:
+    print(e)
+    print('Couldn\'t access daily reward')
+    exit(1003)
 
 # Choose Sentiment
 try:
     driver.find_element_by_css_selector("#fd > center > img").click()
     time.sleep(SLEEP_TIME)
     print('Successful Choose Sentiment')
-except:
+except BaseException:
     print('Sentiment not found')
     exit(1004)
 
@@ -63,7 +59,7 @@ try:
     driver.find_element_by_xpath("(//input[@name='qdmode'])[2]").click()
     print('Successful Autofill review')
     time.sleep(SLEEP_TIME)
-except:
+except BaseException:
     print('Autofill review fail')
     exit(1005)
 
@@ -71,7 +67,7 @@ except:
 try:
     driver.find_element_by_css_selector("button.pn.pnc").click()
     print('Successful Submit daily request')
-except:
+except BaseException:
     print('Submit daily request fail')
     exit(1006)
 
