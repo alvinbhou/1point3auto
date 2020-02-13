@@ -37,17 +37,12 @@ except:
 
 # Click Daily Reward
 try:
-    driver.find_element_by_xpath("//div[@id='um']/p[2]/a[3]/font").click()
+    driver.find_element_by_xpath("//font[text()='签到领奖!']").click()
     time.sleep(SLEEP_TIME)
     print('Successful click Daily Reward')
 except:
-    try:
-        driver.find_element_by_xpath("//div[@id='um']/p[2]/a[2]/font").click()
-        time.sleep(SLEEP_TIME)
-        print('Successful click Daily Reward after retry')
-    except:
-        print('Couldn\'t access daily reward')
-        exit(1003)
+    print('Couldn\'t access daily reward')
+    exit(1003)
 
 # Choose Sentiment
 try:
